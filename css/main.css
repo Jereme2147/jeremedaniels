@@ -14,6 +14,7 @@ html h3 {
 body {
   background-color: #efefef;
   width: 100vw;
+  height: 100%;
 }
 
 body #bg {
@@ -22,7 +23,7 @@ body #bg {
   background-color: darkgray;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
 }
 
@@ -112,27 +113,27 @@ body #bg {
 }
 
 #buttons ul li {
-  color: #323232;
-  text-shadow: 1px 1px 1px #caebf2;
-  padding: 2px 0 3px 5px;
+  color: #656565;
+  padding: 0 0 4px 5px;
   height: 20px;
   font-size: 15px;
   text-decoration: none;
+  text-transform: uppercase;
   list-style: none;
-  background-color: transparent;
+  background-color: #efefef;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: inset 0 -2px 1px #989898, inset 1px 2px 1px white;
-          box-shadow: inset 0 -2px 1px #989898, inset 1px 2px 1px white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  border-bottom: 1px solid #7e7e7e;
+  border-top: 2px solid white;
 }
 
 @media (min-width: 600px) and (max-width: 949px) {
@@ -147,6 +148,7 @@ body #bg {
     font-size: 40px;
     height: 100px;
     width: 90%;
+    padding-right: 5px;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -154,12 +156,17 @@ body #bg {
     -webkit-box-shadow: 0 0 0 transparent;
             box-shadow: 0 0 0 transparent;
     border-radius: 0;
+    border-top: none;
     border-bottom: solid 2px #656565;
+    background-color: transparent;
   }
   #buttons ul li:hover {
     text-shadow: 2px 2px 1px #181818;
     opacity: 0.6;
     cursor: pointer;
+  }
+  #buttons ul li:active {
+    font-size: 38px;
   }
 }
 
@@ -169,6 +176,7 @@ body #bg {
   display: flex;
   height: 80px;
   width: 100%;
+  position: fixed;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -204,13 +212,16 @@ body #bg {
 }
 
 #contacts img {
-  width: 60px;
+  width: 50px;
 }
 
 @media (min-width: 950px) {
   #contacts img {
     width: 55px;
     padding: 0 20px 20px 20px;
+  }
+  #contacts img:hover {
+    width: 60px;
   }
 }
 
@@ -229,7 +240,7 @@ body #bg {
 
 @media (min-width: 600px) and (max-width: 949px) {
   #container {
-    height: 50%;
+    height: 85%;
   }
 }
 
@@ -243,9 +254,30 @@ body #bg {
   }
 }
 
+#content {
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (min-width: 950px) {
   #content {
+    position: fixed;
+    overflow-y: scroll;
+    left: 30%;
     width: 60%;
+    height: 80%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 949px) {
+  #content {
+    position: relative;
+    height: 90%;
   }
 }
 
@@ -286,6 +318,7 @@ body #bg {
 
 @media (min-width: 950px) {
   #nav {
+    position: fixed;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -300,6 +333,7 @@ body #bg {
 
 @media (min-width: 600px) and (max-width: 949px) {
   #nav {
+    position: relative;
     height: 180px;
   }
 }
@@ -372,5 +406,12 @@ body #bg {
     height: 225px;
     width: auto;
   }
+}
+
+.selected {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(19, 19, 19, 0)), to(rgba(24, 24, 24, 0.65)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(19, 19, 19, 0) 60%, rgba(24, 24, 24, 0.65) 100%);
+  opacity: 0.6;
+  cursor: pointer;
 }
 /*# sourceMappingURL=main.css.map */
